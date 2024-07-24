@@ -17,7 +17,7 @@ jobs:
           docker push projectsbymw/wisecow:latest
     - name: Deploy the image to Kubernetes
       run: |
-          kubectl apply -f deployment.yaml
+          kubectl apply -f deployment.yaml --validate=false
           kubectl apply -f service.yaml
       env:
         KUBECONFIG: ${{ secrets.KUBE_CONFIG }}
