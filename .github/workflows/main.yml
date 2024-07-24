@@ -23,7 +23,7 @@ jobs:
         
     - name: Create kubeconfig
       run: |
-        mkdir ${HOME}/.kube
+        mkdir -p ${HOME}/.kube
         echo "${{ secrets.CERT_FILE }}" > $HOME/.kube/ca.crt 
         echo "${{ secrets.CLIENT_CERT }}" > $HOME/.kube/client.crt 
         echo "${{ secrets.CLIENT_KEY }}" > $HOME/.kube/client.key
