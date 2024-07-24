@@ -23,11 +23,11 @@ jobs:
         
     - name: Create kubeconfig
       run: |
-        mkdir -p ${HOME}/.kube
+        mkdir -p $HOME/.kube
         echo "${{ secrets.CERT_FILE }}" > $HOME/.kube/ca.crt 
         echo "${{ secrets.CLIENT_CERT }}" > $HOME/.kube/client.crt 
         echo "${{ secrets.CLIENT_KEY }}" > $HOME/.kube/client.key
-        echo ${{ secrets.KUBE_CONFIG }} > $HOME/.kube/config
+        echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
       
     - name: Deploy the image to Kubernetes
       run: |
