@@ -24,6 +24,7 @@ jobs:
     - name: Set up kubeconfig
       run: |
         mkdir -p $HOME/.minikube
+        minikube start
         echo "${{ secrets.CERT_FILE }}" > $HOME/.minikube/ca.crt
         echo "${{ secrets.CERT_KEY }}" > $HOME/.minikube/ca.key
         echo "${{ secrets.CLIENT_CERT }}" > $HOME/.minikube/client.crt
