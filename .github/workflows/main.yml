@@ -21,12 +21,15 @@ jobs:
       with:
         version: 'latest'
         
-    - name: Set up kubeconfig
+    - name: Create kubeconfig
       run: |
-        mkdir -p ${HOME}/.kube
-        echo "${{ secrets.KUBECONFIG }}" > ${HOME}/.kube/config
+        mkdir ${HOME}/.kube
+        echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${HOME}/.kube/config
         cat ${HOME}/.kube/config
       
     - name: Deploy the image to Kubernetes
       run: |
           kubectl apply -f deployment.yaml --validate=false
+
+        
+          
