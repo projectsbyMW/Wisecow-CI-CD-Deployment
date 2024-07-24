@@ -29,4 +29,3 @@ jobs:
     - name: Deploy the image to Kubernetes
       run: |
           kubectl apply -f deployment.yaml --validate=false
-          kubectl apply -f service.yaml
