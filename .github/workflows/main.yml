@@ -26,6 +26,8 @@ jobs:
         mkdir -p $HOME/.minikube
         echo "${{ secrets.CERT_FILE }}" > $HOME/.minikube/ca.crt
         echo "${{ secrets.CERT_KEY }}" > $HOME/.minikube/ca.key
+        echo "${{ secrets.CLIENT_CERT }}" > $HOME/.minikube/client.crt
+        echo "${{ secrets.CLIENT_KEY }}" > $HOME/.minikube/client.key
         mkdir -p $HOME/.kube
         echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
         
