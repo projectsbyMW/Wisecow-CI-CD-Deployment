@@ -28,7 +28,6 @@ jobs:
         echo "${{ secrets.CLIENT_CERT }}" > $HOME/.kube/client.crt 
         echo "${{ secrets.CLIENT_KEY }}" > $HOME/.kube/client.key
         echo ${{ secrets.KUBE_CONFIG }} > ${HOME}/.kube/config
-        cat ${HOME}/.kube/config
       
     - name: Deploy the image to Kubernetes
       run: |
