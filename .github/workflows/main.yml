@@ -1,0 +1,33 @@
+name: Docker Build and Push, Kubernetes Deploy CI-CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/wisecow:latest .
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/wisecow:latest
+
+    - name: Create kubeconfig and manage self-signed SSL certs
+      run: |
+        mkdir -p $HOME/.kube
+        echo "${{ secrets.CERT_FILE }}" > $HOME/.kube/ca.crt 
+        echo "${{ secrets.CLIENT_CERT }}" > $HOME/.kube/client.crt 
+        echo "${{ secrets.CLIENT_KEY }}" > $HOME/.kube/client.key
+        echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
+      
+    - name: Deploy the image to Kubernetes
+      run: |
+          minikube start
+          kubectl apply -f deployment.yaml
+
+        
+          
