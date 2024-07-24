@@ -15,3 +15,9 @@ jobs:
           docker build -t projectsbymw/wisecow:latest .
           docker login -u projectsbymw -p ${{ secrets.DOCKER_PASSWORD }}
           docker push projectsbymw/wisecow:latest
+    - name: Deploy the image to Kubernetes
+      run: |
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
+      env:
+        KUBECONFIG: ${{ secrets.KUBE_CONFIG }}
