@@ -15,12 +15,7 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/wisecow:latest .
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push ${{ secrets.DOCKER_USERNAME }}/wisecow:latest
-    
-    - name: Set up kubectl
-      uses: azure/setup-kubectl@v1
-      with:
-        version: 'latest'
-        
+
     - name: Create kubeconfig and manage self-signed SSL certs
       run: |
         mkdir -p $HOME/.kube
