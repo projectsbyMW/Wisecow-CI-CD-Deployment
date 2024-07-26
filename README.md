@@ -4,16 +4,25 @@
 
 <h2>Objective: To containerize and deploy the Wisecow application, hosted in the above-mentioned GitHub repository, on a Kubernetes environment with secure TLS communication. </h2>
 
-<h2>Requirements:<h2> 
+<h2>Requirements achieved:<h2> 
 
-<h3>Dockerization: </h3> <li> Develop a Dockerfile for creating a container image of the Wisecow application. </li>
+<h3>Dockerization: </h3> <li> Developed a Dockerfile for creating a container image of the Wisecow application. </li>
+
+<h1>IMAGE</h1>
 
 <h3> Kubernetes Deployment: </h3> <li> Craft Kubernetes manifest files for deploying the Wisecow application in a Kubernetes environment. </li> <li> The Wisecow app must be exposed as a Kubernetes service for accessibility. </li>
 
+<h1>IMAGE</h1>
+
 <h3>Continuous Integration and Deployment (CI/CD): <h3> <h4>Implement a GitHub Actions workflow for:</h4> <li> Automating the build and push of the Docker image to a container registry whenever changes are committed to the repository. </li> <li>Continuous Deployment [Challenge Goal]: Automatically deploy the updated application to the Kubernetes environment following successful image builds. </li>
+
+<h1>IMAGE</h1>
+  
 <h3>TLS Implementation [Challenge Goal]: </h3> <li> Ensure that the Wisecow application supports secure TLS communication. </li>
 
-<h3>Expected Artifacts:</h3> <li> A private GitHub repository containing: </li>
+<h1>IMAGE</h1>
+
+<h3>Artifacts displayed in GitHub repo:</h3> 
 <li> The Wisecow application source code. </li>
 <li> The Dockerfile for the application. </li>
 <li> Kubernetes manifest files for deployment</li>
