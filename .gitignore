@@ -1,2 +1,5 @@
-All the image files.
+#All the image files.
 *.png
+
+#All in the images folder
+/images/*
