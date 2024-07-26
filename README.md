@@ -1,4 +1,4 @@
-                                                                    Title: Containerisation and Deployment of Wisecow Application on Kubernetes 
+Title: Containerisation and Deployment of Wisecow Application on Kubernetes 
 
 Project Repository: https://github.com/nyrahul/wisecow Wisecow App 
 
