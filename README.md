@@ -8,19 +8,19 @@
 
 <h3>Dockerization: </h3> <li> Developed a Dockerfile for creating a container image of the Wisecow application. </li>
 
-![Docker Result](<Docker deployment result.png>)
+![Docker Result](<images/Docker deployment result.png>)
 
 <h3> Kubernetes Deployment: </h3> <li> Craft Kubernetes manifest files for deploying the Wisecow application in a Kubernetes environment. </li> <li> The Wisecow app must be exposed as a Kubernetes service for accessibility. </li>
 
-![Kubernetes Deployment](<Screenshot (71).png>)
+![Kubernetes Deployment](<images/Screenshot (71).png>)
 
 <h3>Continuous Integration and Deployment (CI/CD): <h3> <h4>Implement a GitHub Actions workflow for:</h4> <li> Automating the build and push of the Docker image to a container registry whenever changes are committed to the repository. </li> <li>Continuous Deployment [Challenge Goal]: Automatically deploy the updated application to the Kubernetes environment following successful image builds. </li>
 
-![CI/CD Result](<Screenshot (70).png>)
+![CI/CD Result](<images/Screenshot (70).png>)
 
 <h3>TLS Implementation [Challenge Goal]: </h3> <li> Ensure that the Wisecow application supports secure TLS communication. </li>
 
-![TLS Imp Result](<Screenshot (68)-1.png>)
+![TLS Imp Result](<images/Screenshot (68)-1.png>)
 
 <h3>Artifacts displayed in GitHub repo:</h3> 
 <li> The Wisecow application source code. </li>
